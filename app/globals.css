@@ -2,32 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  margin: 0;
+  padding: 0;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+* {
+  transition: all 400ms ease;
 }
+
+.hero {
+  background: rgb(62, 86, 70);
+  background: radial-gradient(circle, rgba(62, 86, 70, 1) 50%, rgba(11, 17, 12, 1) 100%);
+}
+
+.button {
+  color: white;
+  border-radius: 16px;
+  border: 2px solid white;
+  width: 200px;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.borderless {
+  background: transparent;
+  border: none;
+}
+
+.nav-link:hover {
+  color: #fff;
+}
+
+.active::after {
+  content: '';
+  width: 75%;
+  height: 3px;
+  position: absolute;
+  bottom: -5px;
+  left: 40%;
+  transform: translateX(-50%);
+  background: #fff;
+  transition: width 0.3s ease;
+  border-radius: 2px;
+
+}
+
+.navbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 30px;
+}
+
+.mobile {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  border: none;
+}
+
+@media only screen and (max-width: 768px) {}
