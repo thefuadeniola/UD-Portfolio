@@ -25,6 +25,7 @@ body {
   align-items: center;
   justify-content: center;
   background: transparent;
+  transition: all 350ms ease;
 }
 
 .borderless {
@@ -34,6 +35,20 @@ body {
 
 .nav-link:hover {
   color: #fff;
+}
+
+.nav-link:hover::after {
+  content: '';
+  width: 75%;
+  height: 3px;
+  position: absolute;
+  bottom: -5px;
+  left: 40%;
+  transform: translateX(-50%);
+  background: #fff;
+  transition: width 0.4s ease;
+  border-radius: 2px;
+
 }
 
 .active::after {
@@ -64,6 +79,11 @@ body {
   left: 0;
   right: 0;
   border: none;
+}
+
+.button:hover {
+  background-color: white;
+  color: #3E5646;
 }
 
 @media only screen and (max-width: 768px) {}
