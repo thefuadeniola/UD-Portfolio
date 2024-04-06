@@ -6,7 +6,7 @@ import { navItems } from '@/data'
 import { usePathname } from 'next/navigation'
 
 const Nav = () => {
-    const [dropdown, setDropdown] = useState(true);
+    const [dropdown, setDropdown] = useState(false);
     const pathname = usePathname();
 
     const handleClick = () => {
